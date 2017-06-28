@@ -11,7 +11,7 @@ This application was developed using [Flask](http://flask.pocoo.org/). Postgres 
 * Start up your terminal (or Command Prompt on Windows OS).
 * Ensure that you've `python` installed on your PC.
 * Clone the repository by entering the command `git clone https://github.com/andela-bolajide/ToDoListAPI` in the terminal.
-* Navigate to the project folder using `cd BucketListAPI` on your terminal (or command prompt).
+* Navigate to the project folder using `cd ToDoListAPI` on your terminal (or command prompt).
 * After cloning, create a virtual environment then install the requirements with the command:
 `pip install -r requirements.txt`.
 * After this, you'll need initialize a PostgreSQL database using the command: `python manage.py db init`
@@ -29,13 +29,11 @@ The API has routes, each dedicated to a single task that uses HTTP response code
 
 The following features make up the ToDoList API:
 
-###### BucketLists
+###### ToDoList
 
--   It allows new bucketlists to be created by authenticated users.
+-   It allows new ToDoLists to be created by users.
 
--   It ensures all bucketlist are accessible based on the permission specified.
-
--   It allows the users to create, retrieve, modify, and delete bucketlists and bucketlist items.
+-   It allows the users to create, retrieve, modify, and delete ToDoLists.
 
 
 
@@ -45,4 +43,4 @@ The following features make up the ToDoList API:
 | **GET** /todolists/                      | List all created todolists    |    TRUE       |
 | **GET** /todolist/id                     | Get single todo list          |    TRUE       |
 | **PUT** /todolist/id                     | Update a todo list            |    TRUE       |
-| **DELETE** /todolist/id                  | Delete a bucket list          |    TRUE       |
+| **DELETE** /todolist/id                  | Delete a ToDo List            |    TRUE       |
