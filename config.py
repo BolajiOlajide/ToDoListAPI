@@ -28,8 +28,7 @@ class DevelopmentConfig(Config):
     modes, so they are defined in a class called DevelopmentConfig.
     """
 
-    SQLALCHEMY_DATABASE_URI = 'postgres://zdvbmfxp:M_o8e7nHBqgbJ7R4hzxIWco_'
-    'ekEuxsBn@babar.elephantsql.com:5432/zdvbmfxp'
+    SQLALCHEMY_DATABASE_URI = 'postgres://zdvbmfxp:M_o8e7nHBqgbJ7R4hzxIWco_ekEuxsBn@babar.elephantsql.com:5432/zdvbmfxp'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     DEBUG = True
 
@@ -42,8 +41,7 @@ class ProductionConfig(Config):
     modes, so they are defined in a class called ProductionConfig.
     """
 
-    SQLALCHEMY_DATABASE_URI = 'postgres://zdvbmfxp:M_o8e7nHBqgbJ7R4hzxIWco_'
-    'ekEuxsBn@babar.elephantsql.com:5432/zdvbmfxp'
+    SQLALCHEMY_DATABASE_URI = 'postgres://zdvbmfxp:M_o8e7nHBqgbJ7R4hzxIWco_ekEuxsBn@babar.elephantsql.com:5432/zdvbmfxp'
 
 
 # Object containing the different configuration classes.
