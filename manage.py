@@ -1,30 +1,21 @@
-"""App management settings defined here."""
 from flask import Flask
-from flask_migrate import Migrate, MigrateCommand
-from flask_script import Manager, Shell, Server
+from flask_sqlalchemy import SQLAlchemy
 
-from app import create_app, db
-from app.models import ToDoList
+from config import config
+
 
 app = Flask(__name__)
+app.config.from_object(config['development'])
+
+db = SQLAlchemy()
+
+db.init_app(app)
 
 
-app = create_app('development')
-manager = Manager(app)
-migrate = Migrate(app, db)
+@app.route('/')
+def index():
+    return 'App setup is nearing completion'
 
-
-def make_shell_context():
-    """
-    Create a context for interacting in a shell for the application.
-
-    Import the model objects to enable easy interaction.
-    """
-    return dict(app=app, db=db, ToDoList=ToDoList)
-
-manager.add_command("shell", Shell(make_context=make_shell_context))
-manager.add_command('db', MigrateCommand)
-manager.add_command('runserver', Server())
 
 if __name__ == '__main__':
-    manager.run()
+    app.run()
