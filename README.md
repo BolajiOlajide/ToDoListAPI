@@ -41,6 +41,6 @@ The following features make up the ToDoList API:
 | -----------------------------------------|:-----------------------------:|--------------:|
 | **POST** /todolists/                     | Create a new To Do List       |    TRUE       |
 | **GET** /todolists/                      | List all created todolists    |    TRUE       |
-| **GET** /todolist/id                     | Get single todo list          |    TRUE       |
-| **PUT** /todolist/id                     | Update a todo list            |    TRUE       |
-| **DELETE** /todolist/id                  | Delete a ToDo List            |    TRUE       |
+| **GET** /todolist/:id                     | Get single todo list          |    TRUE       |
+| **PUT** /todolist/:id                     | Update a todo list            |    TRUE       |
+| **DELETE** /todolist/:id                  | Delete a ToDo List            |    TRUE       |
