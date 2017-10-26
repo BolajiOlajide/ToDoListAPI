@@ -9,7 +9,7 @@ from app.models import ToDoList
 app = Flask(__name__)
 
 
-app = create_app('development')
+app = create_app('production')
 manager = Manager(app)
 migrate = Migrate(app, db)
 
