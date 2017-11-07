@@ -40,7 +40,7 @@ def get_todolists():
     todolists = ToDoList.query.all()
     todo = [to_json(todolist) for todolist in todolists]
     return jsonify({
-        "ToDo Lists": todo,
+        "data": todo,
         "status": 200
     }), 200
 
