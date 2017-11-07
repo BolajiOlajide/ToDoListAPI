@@ -12,7 +12,7 @@ from app.helper import to_json
 api = Blueprint('api', __name__)
 
 
-@api.route('/todolists/', methods=['POST', 'OPTIONS'])
+@api.route('/todolists/', methods=['POST', 'OPTIONS'], strict_slashes=False)
 @cross_origin()
 def create_todolist():
     """
@@ -25,6 +25,7 @@ def create_todolist():
     return jsonify({
         "message": "{} has been added to your ToDo List."
                    .format(request.json['name']),
+        "data": request.json,
         "status": 201
     }), 201
 
