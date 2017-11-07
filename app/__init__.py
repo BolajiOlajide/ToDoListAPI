@@ -5,6 +5,7 @@ This helps to enable the use of blueprint.
 """
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 
 from config import config
 
@@ -16,6 +17,7 @@ def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
     db.init_app(app)
+    cors = CORS(app)
 
     # Register blueprint.
     from app.routes import api

@@ -4,6 +4,7 @@ This script contains the routes for the different API methods.
 This handles the overall routing of the application.
 """
 from flask import Blueprint, jsonify, request
+from flask_cors import cross_origin
 
 from app.models import ToDoList
 from app.helper import to_json
@@ -11,7 +12,8 @@ from app.helper import to_json
 api = Blueprint('api', __name__)
 
 
-@api.route('/todolists/', methods=['POST'])
+@api.route('/todolists/', methods=['POST', 'OPTIONS'])
+@cross_origin()
 def create_todolist():
     """
     Create a new ToDoList.
@@ -27,7 +29,8 @@ def create_todolist():
     }), 201
 
 
-@api.route('/todolists/', methods=['GET'])
+@api.route('/todolists/', methods=['GET', 'OPTIONS'])
+@cross_origin()
 def get_todolists():
     """
     Get all the created ToDo Lists.
@@ -42,7 +45,8 @@ def get_todolists():
     }), 200
 
 
-@api.route('/todolists/<int:todolist_id>', methods=['GET'])
+@api.route('/todolists/<int:todolist_id>', methods=['GET', 'OPTIONS'])
+@cross_origin()
 def get_todolist(todolist_id):
     """Get a particular todolist with it's ID."""
     todolist = ToDoList.query.filter_by(todoList_id=todolist_id).first()
@@ -52,7 +56,8 @@ def get_todolist(todolist_id):
     }), 200
 
 
-@api.route('/todolists/<int:todolist_id>', methods=['DELETE'])
+@api.route('/todolists/<int:todolist_id>', methods=['DELETE', 'OPTIONS'])
+@cross_origin()
 def delete_todolist(todolist_id):
     """Get a particular todolist with it's ID and delete it."""
     todolist = ToDoList.query.filter_by(todoList_id=todolist_id).first()
@@ -63,7 +68,8 @@ def delete_todolist(todolist_id):
     }), 200
 
 
-@api.route('/todolists/<int:todolist_id>', methods=['PUT'])
+@api.route('/todolists/<int:todolist_id>', methods=['PUT', 'OPTIONS'])
+@cross_origin()
 def update_todolist(todolist_id):
     """Get a particular todolist with it's ID and update it."""
     todolist = ToDoList.query.filter_by(todoList_id=todolist_id).first()
